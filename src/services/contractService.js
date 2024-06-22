@@ -1,34 +1,11 @@
-const { Contract } = require('../models');
+const { getContractById, getContractsByProfileId } = require('../dal/contractDAL');
 
-const getContractById = async (id) => {
-    const contract = await Contract.findOne({ where: { id } });
-    return contract;
+const findContractById = async (id, profileId) => {
+    return getContractById(id, profileId);
 };
 
-const getContractsForUser = async (userId) => {
-    const contracts = await Contract.findAll({
-        where: {
-            [sequelize.Op.or]: [
-                { ClientId: userId },
-                { ContractorId: userId }
-            ],
-            status: {
-                [sequelize.Op.ne]: 'terminated'
-            }
-        }
-    });
-    return contracts;
+const findContractsByProfileId = async (profileId) => {
+    return getContractsByProfileId(profileId);
 };
 
-const getActiveContracts = async () => {
-    const contracts = await Contract.findAll({
-        where: { status: 'in_progress' }
-    });
-    return contracts;
-};
-
-module.exports = {
-    getContractById,
-    getContractsForUser,
-    getActiveContracts
-};
+module.exports = { findContractById, findContractsByProfileId };
