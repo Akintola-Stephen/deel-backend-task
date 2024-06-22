@@ -1,4 +1,4 @@
-const { Job, Contract, Profile } = require('../models');
+const { Job, Contract, Profile } = require('../model');
 const { Op } = require('sequelize');
 
 const getBestProfession = async (start, end) => {

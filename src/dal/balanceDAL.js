@@ -1,4 +1,4 @@
-const { Profile, Job, Contract } = require('../models');
+const { Profile, Job, Contract } = require('../model');
 const { Op } = require('sequelize');
 
 const depositToBalance = async (clientId, amount) => {

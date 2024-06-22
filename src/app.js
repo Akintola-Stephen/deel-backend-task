@@ -1,21 +1,33 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const {sequelize} = require('./model')
-const {getProfile} = require('./middleware/getProfile')
-const app = express();
-app.use(bodyParser.json());
-app.set('sequelize', sequelize)
-app.set('models', sequelize.models)
+const { sequelize } = require('./models');
+const { getProfile } = require('./middleware/getProfile');
+const { errorHandler } = require('./middleware/errorHandler');
+const adminRoutes = require('./routes/adminRoutes');
+const balanceRoutes = require('./routes/balanceRoutes');
+const contractRoutes = require('./routes/contractRoutes');
+const jobRoutes = require('./routes/jobRoutes');
 
-/**
- * FIX ME!
- * @returns contract by id
- */
-app.get('/contracts/:id',getProfile ,async (req, res) =>{
-    const {Contract} = req.app.get('models')
-    const {id} = req.params
-    const contract = await Contract.findOne({where: {id}})
-    if(!contract) return res.status(404).end()
-    res.json(contract)
-})
-module.exports = app;
+const app = express();
+
+app.use(express.json());
+app.use(getProfile);
+
+app.use('/admin', adminRoutes);
+app.use('/balances', balanceRoutes);
+app.use('/contracts', contractRoutes);
+app.use('/jobs', jobRoutes);
+
+app.use(errorHandler);
+
+const start = async () => {
+    try {
+        await sequelize.sync();
+        app.listen(3001, () => {
+            console.log('Server is running on port 3001');
+        });
+    } catch (err) {
+        console.error('Failed to start the server:', err);
+    }
+};
+
+start();
