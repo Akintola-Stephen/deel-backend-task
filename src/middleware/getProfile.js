@@ -1,5 +1,6 @@
 const { Profile } = require('../models');
 
+
 const getProfile = async (req, res, next) => {
     const profileId = req.get('profile_id') || 0;
     try {
