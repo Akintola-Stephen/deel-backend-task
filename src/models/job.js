@@ -3,6 +3,7 @@ const sequelize = require('../config/database');
 
 class Job extends Model { }
 
+
 Job.init(
     {
         description: {

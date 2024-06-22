@@ -3,6 +3,7 @@ const sequelize = require('../config/database');
 
 class Contract extends Model { }
 
+
 Contract.init(
     {
         terms: {
