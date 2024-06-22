@@ -3,6 +3,7 @@ const sequelize = require('../config/database');
 
 class Profile extends Model { }
 
+
 Profile.init(
     {
         firstName: {
