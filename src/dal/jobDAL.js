@@ -1,4 +1,4 @@
-const { Job, Profile, Contract } = require('../model');
+const { Job, Contract, Profile } = require("../model/index")
 const { Op } = require('sequelize');
 
 const getUnpaidJobsByProfileId = async (profileId) => {

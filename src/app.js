@@ -1,5 +1,5 @@
 const express = require('express');
-const { sequelize } = require('./models');
+const { sequelize } = require('../src/model');
 const { getProfile } = require('./middleware/getProfile');
 const { errorHandler } = require('./middleware/errorHandler');
 const adminRoutes = require('./routes/adminRoutes');

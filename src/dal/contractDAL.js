@@ -1,4 +1,4 @@
-const { Contract } = require('../model');
+const { Contract } = require("../model/index")
 
 const getContractById = async (id, profileId) => {
     return Contract.findOne({
