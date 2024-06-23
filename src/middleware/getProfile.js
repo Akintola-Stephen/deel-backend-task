@@ -1,4 +1,4 @@
-const { Profile } = require('../models');
+const { Profile } = require("../model/index")
 
 const getProfile = async (req, res, next) => {
     const profileId = req.get('profile_id');
