@@ -11,7 +11,7 @@ const getUnpaidJobsByProfileId = async (profileId) => {
             },
         },
         where: {
-            paid: true,
+            paid: null,
         },
     });
 };
