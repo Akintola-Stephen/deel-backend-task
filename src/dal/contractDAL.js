@@ -1,4 +1,5 @@
 const { Contract } = require("../model/index")
+const { Op } = require('sequelize');
 
 const getContractById = async (id, profileId) => {
     return Contract.findOne({

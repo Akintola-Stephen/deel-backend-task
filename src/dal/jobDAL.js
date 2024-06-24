@@ -1,4 +1,4 @@
-const { Job, Contract, Profile } = require("../model/index")
+const { Job, Contract, Profile, sequelize } = require("../model/index")
 const { Op } = require('sequelize');
 
 const getUnpaidJobsByProfileId = async (profileId) => {
@@ -11,10 +11,11 @@ const getUnpaidJobsByProfileId = async (profileId) => {
             },
         },
         where: {
-            paid: false,
+            paid: true,
         },
     });
 };
+
 
 const payJob = async (jobId, clientId) => {
     return sequelize.transaction(async (t) => {

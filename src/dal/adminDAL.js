@@ -1,6 +1,7 @@
 const { Job, Contract, Profile, sequelize } = require("../model/index")
 const { Op } = require('sequelize');
 
+
 const getBestProfession = async (start, end) => {
     const professions = await Profile.findAll({
         include: {
