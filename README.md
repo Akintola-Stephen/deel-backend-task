@@ -1,14 +1,13 @@
-# bank-operation
+# DEEL-OPERATION
 
-A simple banking operation
 
 ```
-BANKING OPERATION - is a simple app that allows user creates an account based on some given account types (Savings, Current,..), retrieve information on his account based on a generated account number and also view olist of all created account
+DEEL OPERATION
 ```
 
 ## Code structure explanation
 
-This project work contains the follwing folders.
+This project work contains the following folders.
 
 - config: A folder that contains a db file that contains functions used to establish connection to our mongoDB database
 
@@ -21,11 +20,10 @@ This project work contains the follwing folders.
 
 
 
-#### Postman Docs ⚡
+#### Swagger Docs ⚡
 
-| Routes               | HTTP Methods | Description                    |
-| :------------------- | :----------- | :----------------------------- |
-| https://www.postman.com/sakintola351/workspace/flutterwave/documentation/16998467-528b10c4-1608-4701-a3b0-9d7bea00e95a | POST, GET | POSTMAN 
+| Routes
+| http://localhost:3001/api-docs/#/
 
 
 
@@ -33,9 +31,13 @@ This project work contains the follwing folders.
 
 | Routes               | HTTP Methods | Description                    |
 | :------------------- | :----------- | :----------------------------- |
-| https://fbo-v7fg.onrender.com/api/user/register   | POST         | User registration route        |
-| https://fbo-v7fg.onrender.com/api/userbankdetails | GET          | Extract a user account details |
-| https://fbo-v7fg.onrender.com/api/bankdetails/    | GET          | Get all user account details   |
+| http://localhost:3001/admin/best-profession?start=<date>&end=<date> | GET         | Returns the profession that earned the most money        |
+| http://localhost:3001/admin/best-clients?start=2020-08-13&end=2020-08-19   | GET          | returns the clients the paid the most for jobs in the query time period  |
+| http://localhost:3001/balances/deposit/1 | POST          | Deposits money into the the the balance of a client |
+| http://localhost:3001/jobs/unpaid   | GET          | Get all user account details   |
+| http://localhost:3001/jobs/2/pay  | GET          | Pay for a job   |
+| http://localhost:3001/contracts/3   | GET          | Get all user account details   |
+| http://localhost:3001/contracts   | GET          | list of contracts belonging to a user   |
 
 
 
@@ -59,9 +61,7 @@ Project is created with:
 
 To run this project locally, clone repo and add an `.env` file in the root:
 
-```
-MONGODB_URI='mongodb+srv://username:password@cluster0.eetsx.mongodb.net/database_name'
-```
+
 
 Then execute in command prompt:
 
