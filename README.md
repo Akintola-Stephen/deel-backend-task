@@ -79,7 +79,3 @@ $ npm run
 - Implement with TypeScript
 - Properly debug my test cases
 
-
-```
-DEEL OPERATION
-```
