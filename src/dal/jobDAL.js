@@ -20,23 +20,25 @@ const getUnpaidJobsByProfileId = async (profileId) => {
 const payJob = async (jobId, clientId) => {
     return sequelize.transaction(async (t) => {
         const job = await Job.findOne({
-            where: { id: jobId, paid: false },
+            where: { id: jobId, paid: true },
             include: {
                 model: Contract,
-                where: { clientId },
+                where: { clientId, },
             },
         }, { transaction: t });
+
+
 
         if (!job) {
             throw new Error('Job not found or already paid');
         }
 
         const client = await Profile.findByPk(clientId, { transaction: t });
-        const contractor = await Profile.findByPk(job.Contract.contractorId, { transaction: t });
 
-        if (client.balance < job.price) {
-            throw new Error('Insufficient balance');
-        }
+        const contractor = await Profile.findByPk(job.Contract.ContractorId, { transaction: t });
+
+
+        console.log(job)
 
         client.balance -= job.price;
         contractor.balance += job.price;
