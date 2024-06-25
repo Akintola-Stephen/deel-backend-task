@@ -1,5 +1,4 @@
 import { Job, Contract, Profile, sequelize } from "../model/index.js";
-// const { Job, Contract, Profile, sequelize } = default;
 import { Op } from 'sequelize';
 
 const getUnpaidJobsByProfileId = async (profileId) => {

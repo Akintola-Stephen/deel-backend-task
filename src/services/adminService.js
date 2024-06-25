@@ -1,5 +1,5 @@
 import { getBestProfession, getBestClients } from '../dal/adminDAL.js';
-// const  = default;
+
 
 const bestProfession = async (start, end) => {
     return getBestProfession(start, end);

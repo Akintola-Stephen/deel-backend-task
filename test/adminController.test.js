@@ -4,7 +4,7 @@ import app from '../src/app.js';
 
 
 const server = use(chaiHttp)
-// console.log(app)
+
 
 describe('Admin Controller', () => {
     describe('GET /admin/best-profession', () => {

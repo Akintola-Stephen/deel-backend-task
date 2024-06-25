@@ -77,9 +77,8 @@ $ npm run
 
 ### Above Requirements
 - Implement with TypeScript
-- Express
-- Mongoose
-- MongoDB Atlas
+- Properly debug my test cases
+
 
 ```
 DEEL OPERATION

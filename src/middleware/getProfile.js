@@ -1,5 +1,4 @@
 import { Profile } from "../model/index.js";
-// const { Profile } = default;
 
 const getProfile = async (req, res, next) => {
     const profileId = req.get('profile_id');

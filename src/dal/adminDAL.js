@@ -1,5 +1,4 @@
 import { Job, Contract, Profile, sequelize } from "../model/index.js";
-// const { Job, Contract, Profile, sequelize } = default;
 import { Op, fn, literal, col } from 'sequelize';
 
 const getBestProfession = async (start, end) => {
