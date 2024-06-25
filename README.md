@@ -54,8 +54,6 @@ Project is created with:
 
 - Node
 - Express
-- Mongoose
-- MongoDB Atlas
 
 ### Setup
 
