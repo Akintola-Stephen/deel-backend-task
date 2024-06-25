@@ -67,7 +67,7 @@ Then execute in command prompt:
 $ cd "deel-backend-task""
 $ npm install
 $ npm run seed
-$ npm run
+$ npm start
 ```
 
 
