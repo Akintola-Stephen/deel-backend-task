@@ -1,7 +1,7 @@
-const express = require('express');
-const { deposit } = require('../controllers/balanceController');
+import { Router } from 'express';
+import { deposit } from '../controllers/balanceController.js';
 
-const router = express.Router();
+const router = Router();
 
 /**
  * @swagger
@@ -25,4 +25,4 @@ const router = express.Router();
  */
 router.post('/deposit/:userId', deposit);
 
-module.exports = router;
+export default router;

@@ -1,7 +1,7 @@
-const { depositToBalance } = require('../dal/balanceDAL');
+import { depositToBalance } from '../dal/balanceDAL.js';
 
 const depositBalance = async (clientId, amount) => {
     return depositToBalance(clientId, amount);
 };
 
-module.exports = { depositBalance };
+export  { depositBalance };

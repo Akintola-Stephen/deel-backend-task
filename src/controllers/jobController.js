@@ -1,4 +1,4 @@
-const { findUnpaidJobsByProfileId, processJobPayment } = require('../services/jobService');
+import { findUnpaidJobsByProfileId, processJobPayment } from '../services/jobService.js';
 
 const getUnpaidJobs = async (req, res, next) => {
     try {
@@ -23,4 +23,4 @@ const payJob = async (req, res, next) => {
     }
 };
 
-module.exports = { getUnpaidJobs, payJob };
+export  { getUnpaidJobs, payJob };

@@ -1,5 +1,6 @@
-const { Contract } = require("../model/index")
-const { Op } = require('sequelize');
+import { Contract } from "../model/index.js";
+// const { Contract } = default;
+import { Op } from 'sequelize';
 
 const getContractById = async (id, profileId) => {
     return Contract.findOne({
@@ -19,4 +20,4 @@ const getContractsByProfileId = async (profileId) => {
     });
 };
 
-module.exports = { getContractById, getContractsByProfileId };
+export  { getContractById, getContractsByProfileId };

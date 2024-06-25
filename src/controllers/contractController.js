@@ -1,4 +1,4 @@
-const { findContractById, findContractsByProfileId } = require('../services/contractService');
+import { findContractById, findContractsByProfileId } from '../services/contractService.js';
 
 const getContract = async (req, res, next) => {
     try {
@@ -22,4 +22,4 @@ const getContracts = async (req, res, next) => {
     }
 };
 
-module.exports = { getContract, getContracts };
+export  { getContract, getContracts };

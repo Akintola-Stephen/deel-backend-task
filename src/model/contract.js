@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const { sequelize } = require('./index');
+import { Model, DataTypes } from 'sequelize';
+import { sequelize } from './index';
 
 class Contract extends Model { }
 
@@ -25,4 +25,4 @@ Contract.init({
     modelName: 'Contract',
 });
 
-module.exports = Contract;
+export default Contract;

@@ -1,4 +1,4 @@
-const { depositBalance } = require('../services/balanceService');
+import { depositBalance } from '../services/balanceService.js';
 
 const deposit = async (req, res, next) => {
     try {
@@ -11,4 +11,4 @@ const deposit = async (req, res, next) => {
     }
 };
 
-module.exports = { deposit };
+export { deposit };

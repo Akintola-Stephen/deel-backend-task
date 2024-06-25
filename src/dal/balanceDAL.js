@@ -1,5 +1,5 @@
-const { Job, Contract, Profile, sequelize } = require("../model/index")
-const { Op } = require('sequelize');
+import { Job, Contract, Profile, sequelize  } from "../model/index.js";
+
 
 const depositToBalance = async (clientId, amount) => {
     return sequelize.transaction(async (t) => {
@@ -35,4 +35,4 @@ const depositToBalance = async (clientId, amount) => {
     });
 };
 
-module.exports = { depositToBalance };
+export  { depositToBalance }

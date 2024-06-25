@@ -1,7 +1,7 @@
-const express = require('express');
-const { getContract, getContracts } = require('../controllers/contractController');
+import { Router } from 'express';
+import { getContract, getContracts } from '../controllers/contractController.js';
 
-const router = express.Router();
+const router = Router();
 
 
 /**
@@ -43,4 +43,4 @@ router.get('/:id', getContract);
  */
 router.get('/', getContracts);
 
-module.exports = router;
+export default router;

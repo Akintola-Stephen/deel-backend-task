@@ -1,5 +1,6 @@
-const { Job, Contract, Profile, sequelize } = require("../model/index")
-const { Op } = require('sequelize');
+import { Job, Contract, Profile, sequelize } from "../model/index.js";
+// const { Job, Contract, Profile, sequelize } = default;
+import { Op } from 'sequelize';
 
 const getUnpaidJobsByProfileId = async (profileId) => {
     return Job.findAll({
@@ -54,4 +55,4 @@ const payJob = async (jobId, clientId) => {
     });
 };
 
-module.exports = { getUnpaidJobsByProfileId, payJob };
+export  { getUnpaidJobsByProfileId, payJob };

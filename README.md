@@ -71,3 +71,16 @@ $ npm install
 $ npm run seed
 $ npm run
 ```
+
+
+
+
+### Above Requirements
+- Implement with TypeScript
+- Express
+- Mongoose
+- MongoDB Atlas
+
+```
+DEEL OPERATION
+```

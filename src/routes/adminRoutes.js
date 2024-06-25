@@ -1,7 +1,7 @@
-const express = require('express');
-const { getBestProfession, getBestClients } = require('../controllers/adminController');
+import { Router } from 'express';
+import { getBestProfession, getBestClients } from '../controllers/adminController.js';
 
-const router = express.Router();
+const router = Router();
 
 
 /**
@@ -86,4 +86,4 @@ router.get('/best-profession', getBestProfession);
  */
 router.get('/best-clients', getBestClients);
 
-module.exports = router;
+export default router;

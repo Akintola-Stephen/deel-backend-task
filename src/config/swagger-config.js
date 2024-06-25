@@ -1,5 +1,5 @@
 
-const swaggerOptionObj =  () => {
+const swaggerOptionObj = () => {
     const swaggerOptions = {
         swaggerDefinition: {
             openapi: '3.0.0',
@@ -52,6 +52,4 @@ const swaggerOptionObj =  () => {
 }
 
 
-
-
-module.exports = swaggerOptionObj;
+export { swaggerOptionObj };

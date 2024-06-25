@@ -1,4 +1,5 @@
-const { getContractById, getContractsByProfileId } = require('../dal/contractDAL');
+import { getContractById, getContractsByProfileId } from '../dal/contractDAL.js';
+// const { getContractById, getContractsByProfileId } = default;
 
 const findContractById = async (id, profileId) => {
     return getContractById(id, profileId);
@@ -8,4 +9,4 @@ const findContractsByProfileId = async (profileId) => {
     return getContractsByProfileId(profileId);
 };
 
-module.exports = { findContractById, findContractsByProfileId };
+export  { findContractById, findContractsByProfileId };

@@ -1,4 +1,5 @@
-const { Profile } = require("../model/index")
+import { Profile } from "../model/index.js";
+// const { Profile } = default;
 
 const getProfile = async (req, res, next) => {
     const profileId = req.get('profile_id');
@@ -13,4 +14,4 @@ const getProfile = async (req, res, next) => {
     next();
 };
 
-module.exports = { getProfile };
+export  { getProfile };

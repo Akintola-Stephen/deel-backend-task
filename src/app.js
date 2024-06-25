@@ -1,22 +1,22 @@
-const express = require('express');
-const swaggerJsDoc = require('swagger-jsdoc');
-const swaggerUi = require('swagger-ui-express');
-const { sequelize } = require('../src/model');
-const { getProfile } = require('./middleware/getProfile');
-const { errorHandler } = require('./middleware/errorHandler');
-const adminRoutes = require('./routes/adminRoutes');
-const balanceRoutes = require('./routes/balanceRoutes');
-const contractRoutes = require('./routes/contractRoutes');
-const jobRoutes = require('./routes/jobRoutes');
-const swaggerOptionObj = require("./config/swagger-config")
+import express, { json } from 'express';
+import swaggerJsDoc from 'swagger-jsdoc';
+import { serve, setup } from 'swagger-ui-express';
+import { sequelize } from './model/index.js';
+import { getProfile } from './middleware/getProfile.js';
+import { errorHandler } from './middleware/errorHandler.js';
+import adminRoutes from './routes/adminRoutes.js';
+import balanceRoutes from './routes/balanceRoutes.js';
+import contractRoutes from './routes/contractRoutes.js';
+import jobRoutes from './routes/jobRoutes.js';
+import { swaggerOptionObj } from "./config/swagger-config.js";
 
 const app = express();
 
 
 const swaggerDocs = swaggerJsDoc(swaggerOptionObj());
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+app.use('/api-docs', serve, setup(swaggerDocs));
 
-app.use(express.json());
+app.use(json());
 app.use(getProfile);
 
 app.use('/admin', adminRoutes);
@@ -38,3 +38,5 @@ const start = async () => {
 };
 
 start();
+
+export default app;

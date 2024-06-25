@@ -1,4 +1,5 @@
-const { getUnpaidJobsByProfileId, payJob } = require('../dal/jobDAL');
+import { getUnpaidJobsByProfileId, payJob } from '../dal/jobDAL.js';
+// const { getUnpaidJobsByProfileId, payJob } = default;
 
 const findUnpaidJobsByProfileId = async (profileId) => {
     return getUnpaidJobsByProfileId(profileId);
@@ -8,4 +9,4 @@ const processJobPayment = async (jobId, clientId) => {
     return payJob(jobId, clientId);
 };
 
-module.exports = { findUnpaidJobsByProfileId, processJobPayment };
+export  { findUnpaidJobsByProfileId, processJobPayment };

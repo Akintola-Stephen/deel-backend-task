@@ -1,4 +1,4 @@
-const { bestProfession, bestClients } = require('../services/adminService');
+import { bestProfession, bestClients } from '../services/adminService.js';
 
 const getBestProfession = async (req, res, next) => {
     try {
@@ -20,4 +20,4 @@ const getBestClients = async (req, res, next) => {
     }
 };
 
-module.exports = { getBestProfession, getBestClients };
+export  { getBestProfession, getBestClients };

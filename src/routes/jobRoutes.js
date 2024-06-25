@@ -1,7 +1,7 @@
-const express = require('express');
-const { getUnpaidJobs, payJob } = require('../controllers/jobController');
+import { Router } from 'express';
+import { getUnpaidJobs, payJob } from '../controllers/jobController.js';
 
-const router = express.Router();
+const router = Router();
 
 
 /**
@@ -43,4 +43,4 @@ router.get('/unpaid', getUnpaidJobs);
  */
 router.post('/:jobId/pay', payJob);
 
-module.exports = router;
+export default router;
