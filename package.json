@@ -20,6 +20,7 @@
     "test": "mocha 'test/**/*.test.js' --exit"
   },
   "devDependencies": {
+    "@types/express": "^4.17.21",
     "chai": "^5.1.1",
     "chai-http": "^5.0.0",
     "concurrently": "^8.0.1",
