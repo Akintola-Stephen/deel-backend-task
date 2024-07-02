@@ -1,6 +1,11 @@
 import { Job, Contract, Profile, sequelize } from "../model/index.js";
 import { Op } from 'sequelize';
 
+/**
+ * Retrieves all unpaid jobs associated with a specific profile ID in 'in_progress' contracts.
+ * @param {number} profileId - The ID of the profile to search for unpaid jobs.
+ * @returns {Promise<Array>} - Array of unpaid job objects.
+ */
 const getUnpaidJobsByProfileId = async (profileId) => {
     return Job.findAll({
         include: {
