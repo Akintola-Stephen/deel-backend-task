@@ -1,5 +1,10 @@
 
+/**
+ * Generates a configuration object for Swagger.
+ * @returns {Object} The Swagger configuration object.
+ */
 const swaggerOptionObj = () => {
+    // Define Swagger configuration object
     const swaggerOptions = {
         swaggerDefinition: {
             openapi: '3.0.0',
@@ -48,6 +53,7 @@ const swaggerOptionObj = () => {
         },
         apis: ['./src/routes/*.js']
     };
+
     return swaggerOptions;
 }
 
